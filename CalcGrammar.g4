@@ -2,7 +2,6 @@ grammar CalcGrammar;
 
 @header {
   package compilercalculator;
-  import java.math.BigDecimal;
   import java.util.HashMap;
 }
 

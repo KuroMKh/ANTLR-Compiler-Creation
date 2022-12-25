@@ -6,7 +6,6 @@ grammar CalcGrammar;
 }
 
 @members {
-	/** Map variable name to Integer object holding value */
 	HashMap memory = new HashMap();
 }
 
@@ -34,7 +33,7 @@ multExpr returns [float value]
     ;
 
 atom returns [float value]
-    :   FLOAT {$value = Float.parseFloat($FLOAT.text);} //tambah regex untuk float
+    :   FLOAT {$value = Float.parseFloat($FLOAT.text);} 
     |   ID 
         {
         Float v = (Float)memory.get($ID.text);
@@ -45,8 +44,7 @@ atom returns [float value]
     ;
 
 ID  :   ('a'..'z'|'A'..'Z')+ ;
-INT :   '0'..'9'+ ;
 FLOAT : '0'..'9' '.' '0'..'9'+;
 NEWLINE:'\r'? '\n' ;
 WS  :   (' '|'\t')+ {skip();} ;
-//tambah regex untuk float
+

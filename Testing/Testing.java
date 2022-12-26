@@ -19,6 +19,9 @@ public class Firstscript {
 		driver.findElement(By.id("CustomerPassword")).sendKeys("Password");
 		WebElement button = driver.findElement(By.xpath("//input[@type='submit' and @value='Sign In']"));
 		button.click();
+		WebElement link = driver.findElement(By.linkText("Log out"));
+		link.click();
+
 	
 		//driver.quit(); //Closing browser
 	}
